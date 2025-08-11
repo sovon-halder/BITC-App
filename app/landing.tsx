@@ -14,7 +14,7 @@ export default function LandingScreen(){
             <Image source={require('./../assets/images/im1.jpg')}
                 style={{
                     width:'100%',
-                    height:'500',
+                    height:500,
                     borderRadius:16
                 }}
             />
@@ -35,6 +35,7 @@ export default function LandingScreen(){
                 }}>Your college news, Updated in your pocket, join the app, Register for new events and Many More</Text>
 
                 <Button text='Get Started' onPress={() => router.push('/(auth)/SignUp')} />
+                   
                 
                 
                 <GestureHandlerRootView  style={{ }}>
@@ -43,7 +44,8 @@ export default function LandingScreen(){
                     textAlign: 'center',
                     fontSize: 16,
                     color: Colors.GRAY
-                }}>Already have an account? Sing In Here</Text>
+                }}>Already have an account? "Sign In Here"
+</Text>
                 </Pressable>
                 </GestureHandlerRootView>
 

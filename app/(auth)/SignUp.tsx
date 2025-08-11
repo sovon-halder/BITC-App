@@ -18,7 +18,7 @@ export default function SignUp() {
 
     const onBtnPress= ()=>{
 
-           if(!email|| !password|| fullName){
+           if(!email || !password || !fullName){
                     ToastAndroid.show('Please enter all details!',ToastAndroid.BOTTOM);
                     return;
             }
@@ -26,9 +26,9 @@ export default function SignUp() {
             createUserWithEmailAndPassword(auth,email,password)
             .then(async(userCredentials)=>{
               console.log(userCredentials);
-              //Upload profile image
+             
 
-              //save to database
+            
 
             }).catch((error)=>{
               const errorMsg=error?.message
@@ -40,7 +40,7 @@ export default function SignUp() {
     
 
     const pickImage = async () => {
-      // No permissions request is necessary for launching the image library
+      
       let result = await ImagePicker.launchImageLibraryAsync({
         mediaTypes: ['images'],
         allowsEditing: true,
@@ -80,6 +80,8 @@ export default function SignUp() {
                   
                    <Image source={require('./../../assets/images/user-profile.png')}
                    style={styles.profileImage}/>
+
+                   
                   }
 
                     <Ionicons name="camera" size={24} color={Colors.PRIMARY}
