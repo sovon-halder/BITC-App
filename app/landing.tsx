@@ -5,10 +5,23 @@ import { useRouter } from 'expo-router';
 import 'react-native-gesture-handler';
 import { Pressable,  GestureHandlerRootView,} from 'react-native-gesture-handler';
 import Colors from '@/data/Colors';
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '@/configs/FirebaseConfig';
 
 
 export default function LandingScreen(){
     const router=useRouter();
+
+    onAuthStateChanged(auth,async (user) => {
+        if (user) {
+            // User is signed in, navigate to the home screen
+            router.push('/(app)/Home');
+        } else {
+            // User is signed out, stay on the landing screen
+            console.log('User is signed out');
+        }
+    }
+
     return(
         <View>
             <Image source={require('./../assets/images/im1.jpg')}
